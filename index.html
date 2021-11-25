@@ -71,10 +71,10 @@ EJS_onSaveState({
       args[arg[0]] = arg[1];
     }
   }
-  if(args['rom']&&args['core']){
-      args['rom'] = decodeURIComponent(args['rom']);
+  if(args['game']&&args['core']){
+      args['game'] = decodeURIComponent(args['game']);
       window.EJS_player = '#game',
-      window.EJS_gameUrl = 'rooms/'+args['rom']; // Url to Game rom
+      window.EJS_gameUrl = 'rooms/'+args['game']; // Url to Game rom
       window.EJS_gameName = EJS_gameUrl.split('/').pop(),
       window.EJS_gameID = EJS_gameName.charCodeAt(0)+EJS_gameName.charCodeAt(2)+''+EJS_gameName.length, // ID in your website, required for netplay.
       window.EJS_core = args['core'],
