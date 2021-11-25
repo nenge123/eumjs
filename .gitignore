@@ -1,5 +1,10 @@
-cores
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+_config.yml
 worker
-emulator.js
-v.json
-Mylocalforage.js
+cores
+Gemfile
+Gemfile.lock
+vendor
