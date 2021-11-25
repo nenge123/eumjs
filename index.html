@@ -71,7 +71,7 @@ EJS_onSaveState({
       args[arg[0]] = arg[1];
     }
   }
-  if(args['game']&&args['core']){
+  if(args['game']&&args['cores']){
       args['game'] = decodeURIComponent(args['game']);
       window.EJS_player = '#game',
       window.EJS_gameUrl = 'rooms/'+args['game']; // Url to Game rom
@@ -88,7 +88,7 @@ EJS_onSaveState({
       if(gamelist[i]){
           let data = gamelist[i].split("|");
           let imgname = data[0].replace(/\(.+?\)/g,'');
-          HTML += '<a href="?game='+encodeURIComponent(data[0])+'.7z&core='+data[1]+'"><img src="roomimgs/'+encodeURIComponent(imgname)+'.png"><p>'+data[0]+'</p></a>';
+          HTML += '<a href="?game='+encodeURIComponent(data[0])+'.7z&cores='+data[1]+'"><img src="roomimgs/'+encodeURIComponent(imgname)+'.png"><p>'+data[0]+'</p></a>';
       }
     }
     gamediv.classList.add("gamelist");
