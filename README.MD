@@ -31,7 +31,7 @@ xxx.data => xxx.7z
     //http://www.emulatorjs.com/cores/
     //see v.json asmjs=>1 http://www.emulatorjs.com/cores/{name}-{asmjs}.data
     //see v.json wasm=>1  http://www.emulatorjs.com/cores/{name}-{wasm}.data
-    downcore('cores/vba-wasm.data')
+     downcore('https://www.emulatorjs.com/cores/vbanext-wasm.data');
 ```
 
 ###GBA例子  gba example
