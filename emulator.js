@@ -18204,6 +18204,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                     return _0x1b0c2c(_0x247601, Event);
                 },
                 'keyboardEvent': function (_0x2b3224) {
+
                     return _0x1b0c2c(_0x2b3224, KeyboardEvent);
                 },
                 'cue': function (_0x57ee67) {
@@ -18482,6 +18483,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
         }
 
         function _0x31cc23() {
+            console.log(arguments);
             var _0xa88a13 = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : null,
                 _0x17edbf = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
             _0x1e2c68['element'](_0xa88a13) && (_0xa88a13['focus'](),
@@ -18534,30 +18536,31 @@ const consoleColor = (bg='#000',color='#fff')=>{
                 'transitions': !0x1 !== _0x5a2767,
                 'reducedMotion': 'matchMedia' in window && window['matchMedia']('(prefers-reduced-motion)')['matches'],
                 'webgl': function () {
-                    var _0xa88a13 = {
+                    var CheckWebGl = {
                         'DETECTED': !0x1
                     };
-                    if (!_0xa88a13['DETECTED']) {
-                        var _0x17edbf = document['createElement']('canvas');
-                        if (_0x17edbf && _0x17edbf['getContext'])
-                            for (var _0x2c1832 = ['webgl2', 'experimental-webgl2', 'webgl', 'experimental-webgl'], _0x44cd27 = 0x0, _0x12b7b8 = _0x2c1832['length']; _0x44cd27 < _0x12b7b8; ++_0x44cd27) {
-                                var _0x11cb40 = _0x2c1832[_0x44cd27],
-                                    _0x26b3b2 = _0x17edbf['getContext'](_0x11cb40);
-                                if (_0x26b3b2) {
-                                    _0xa88a13['WEBGL_CONTEXT'] = _0x11cb40,
-                                        _0xa88a13['WEBGL_VERSION'] = _0x26b3b2['getParameter'](_0x26b3b2['VERSION']),
-                                        _0xa88a13['WEBGL_VENDOR'] = _0x26b3b2['getParameter'](_0x26b3b2['VENDOR']),
-                                        _0xa88a13['WEBGL_SL_VERSION'] = _0x26b3b2['getParameter'](_0x26b3b2['SHADING_LANGUAGE_VERSION']),
-                                        _0xa88a13['MAX_TEXTURE_SIZE'] = _0x26b3b2['getParameter'](_0x26b3b2['MAX_TEXTURE_SIZE']);
-                                    var _0x40c8fc = _0x26b3b2['getExtension']('WEBGL_debug_renderer_info');
-                                    _0x40c8fc && (_0xa88a13['WEBGL_VENDOR'] = _0x26b3b2['getParameter'](_0x40c8fc['UNMASKED_VENDOR_WEBGL']),
-                                            _0xa88a13['WEBGL_RENDERER'] = _0x26b3b2['getParameter'](_0x40c8fc['UNMASKED_RENDERER_WEBGL'])),
-                                        _0xa88a13['DETECTED'] = !0x0;
+                    if (!CheckWebGl['DETECTED']) {
+                        var WebGl_ELM = document['createElement']('canvas');
+                        if (WebGl_ELM && WebGl_ELM['getContext'])
+                            for (var WebGlAttr = ['webgl2', 'experimental-webgl2', 'webgl', 'experimental-webgl'], _0x44cd27 = 0x0, _0x12b7b8 = WebGlAttr['length']; _0x44cd27 < _0x12b7b8; ++_0x44cd27) {
+                                var Attr = WebGlAttr[_0x44cd27],
+                                    WebGlType = WebGl_ELM['getContext'](Attr);
+                                if (WebGlType) {
+                                    CheckWebGl['WEBGL_CONTEXT'] = Attr,
+                                        CheckWebGl['WEBGL_VERSION'] = WebGlType['getParameter'](WebGlType['VERSION']),
+                                        CheckWebGl['WEBGL_VENDOR'] = WebGlType['getParameter'](WebGlType['VENDOR']),
+                                        CheckWebGl['WEBGL_SL_VERSION'] = WebGlType['getParameter'](WebGlType['SHADING_LANGUAGE_VERSION']),
+                                        CheckWebGl['MAX_TEXTURE_SIZE'] = WebGlType['getParameter'](WebGlType['MAX_TEXTURE_SIZE']);
+                                    var getExt = WebGlType['getExtension']('WEBGL_debug_renderer_info');
+                                    getExt && (CheckWebGl['WEBGL_VENDOR'] = WebGlType['getParameter'](getExt['UNMASKED_VENDOR_WEBGL']),
+                                            CheckWebGl['WEBGL_RENDERER'] = WebGlType['getParameter'](getExt['UNMASKED_RENDERER_WEBGL'])),
+                                        CheckWebGl['DETECTED'] = !0x0;
                                     break;
                                 }
                             }
                     }
-                    return _0xa88a13;
+                    console.log(CheckWebGl);
+                    return CheckWebGl;
                 }(),
                 'wasm': 'undefined' != typeof WebAssembly && _0x1e2c68['object'](WebAssembly),
                 'audioContext': 'undefined' != typeof AudioContext
@@ -19443,8 +19446,8 @@ const consoleColor = (bg='#000',color='#fff')=>{
                     _0x2c1832 = _0x47ed14+'/worker/extractzip.js?v=1',
                     _0x4ce206 = _0x47ed14+'worker/libunrar.js';
                      */
-                    var _0xb2be2a = _0x428003('canvas', {});
-                    this['game']['appendChild'](_0xb2be2a),
+                    var ELM_canvans = _0x428003('canvas', {});
+                    this['game']['appendChild'](ELM_canvans),
                         _0x4d7024['loading'] = _0x428003('div', {
                             'class': this.config['classNames']['loading']
                         }),
@@ -19490,10 +19493,11 @@ const consoleColor = (bg='#000',color='#fff')=>{
                         'frameborder': 'no',
                         'style': 'width:300px !important;height:250px !important;display: block !important;'
                     });
+                    //检测 WebGL
                     (_0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['ad']))['removeChild'](_0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['ad'], ' iframe'))),
                         _0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['ad']))['appendChild'](_0x2e2264),
                         _0x2d904a['webgl']['DETECTED']) || (_0x132da7(_0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['start-game'])), !0x0),
-                        _0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['p3'])).innerHTML = '<strong style=\"color:#f00;text-shadow: 0px 0px 3px;\">Failed to initialize WebGL.</strong>');
+                        _0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['p3'])).innerHTML = '<strong style=\"color:#f00;text-shadow: 0px 0px 3px;\">无法初始化WebGL.</strong>');
                     /**
                      * 指定域名IP隐藏广告
                      */
@@ -19622,22 +19626,23 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                 _0x132da7(_0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['start-game'])), !0x0);
                             var _0x30fd44 = _0x5dc0c0(_0x2593da['defaultCoreOptionsValues'].call(_0xa88a13), _0x2593da['storage']['get']('core-options') || {});
                             'n64' === _0xc6823.system && _0x30fd44 && Object['keys'](_0x30fd44)['forEach'](function (_0x3015d2) {
-                                    'glupen64-aspect' === _0x3015d2 && '16:9' === _0x30fd44[_0x3015d2] && (_0xb2be2a['height'] = _0xb2be2a['width'] / 0x10 * 0x9,
+                                    'glupen64-aspect' === _0x3015d2 && '16:9' === _0x30fd44[_0x3015d2] && (ELM_canvans['height'] = ELM_canvans['width'] / 0x10 * 0x9,
                                         _0x4d7024['aspectRatio'] = 0x10 / 0x9);
                                 }),
                                 'arcade' !== _0xa88a13.system && 'fba0.2.97.29' !== _0xa88a13.system || _0x30fd44 && Object['keys'](_0x30fd44)['forEach'](function (_0x490c06) {
-                                    'fba-aspect' === _0x490c06 && 'PAR' === _0x30fd44[_0x490c06] && (_0xb2be2a['height'] = _0xb2be2a['width'] / 0x10 * 0x9,
+                                    'fba-aspect' === _0x490c06 && 'PAR' === _0x30fd44[_0x490c06] && (ELM_canvans['height'] = ELM_canvans['width'] / 0x10 * 0x9,
                                         _0x4d7024['aspectRatio'] = 0x10 / 0x9);
                                 }),
-                                'gba' === _0xc6823.system && (_0xb2be2a['height'] = _0xb2be2a['width'] / 1.5,
+                                'gba' === _0xc6823.system && (ELM_canvans['height'] = ELM_canvans['width'] / 1.5,
                                     _0x4d7024['aspectRatio'] = 1.5),
                                 window['setTimeout'](function () {}, 0x96),
                                 function () {
                                     var _0x3d9f57 = _0xa88a13;
+                                    //绑定 画布事件
                                     if ('undefined' != typeof RI) {
                                         document['removeEventListener']('mousemove', RI['eventHandler'], !0x1),
-                                            _0xb2be2a['removeEventListener']('mousedown', RI['canvasEventHandler'], !0x1),
-                                            _0xb2be2a['removeEventListener']('mouseup', RI['canvasEventHandler'], !0x1);
+                                            ELM_canvans['removeEventListener']('mousedown', RI['canvasEventHandler'], !0x1),
+                                            ELM_canvans['removeEventListener']('mouseup', RI['canvasEventHandler'], !0x1);
                                         _0x3d9f57['elements']['container']['addEventListener']('mousemove', function (_0x44f409) {
                                                 var _0x3d9f57 = 0x0,
                                                     _0x2c1832 = 0x0,
@@ -19790,7 +19795,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             _0x2b8478['readAsArrayBuffer'](new Blob([_0x4fa964['_u8array'].slice(_0x15068c, _0xa88a13)])),
                                                 _0x15068c = _0xa88a13;
                                         } else
-                                            console.log(_0x21e040['hex']()),
+                                            console.log("HASH!"),
                                             _0xc6823['hash'] = _0x21e040['hex'](),
                                             'function' == typeof window['ejsromshash'] && window['ejsromshash'](_0xc6823['hash']);
                                     };
@@ -19836,6 +19841,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                 });
                         },
                         _0x5f3757 = function (_0x2bd107) {
+                            //console.log(_0x2bd107);
                             if (_0x4d7024['gamePatch']) {
                                 var _0x17edbf = _0x2bd107.startName.split('/'),
                                     _0x2c1832 = _0x17edbf.pop().split('.').pop(),
@@ -19920,6 +19926,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                                 !_0x55627a.startName && _0x567713 && (_0x55627a.startName = _0x567713);
                                                 var _0x2c1832 = [_0x55627a.startName, [_0x4d7024['hash'], _0x4d7024['hash2'], _0x4d7024['hash3']].join('')];
                                                 'undefined' != typeof EJS_DEBUG_XX && !0x0 === EJS_DEBUG_XX && _0x2c1832['unshift']('-v'),
+                                                console.log(_0x2c1832),
                                                     _0x4d7024['Module']['callMain'](_0x2c1832),
                                                     _0xbae705.call(_0x55627a, _0x55627a['elements']['container'], 'start-game');
 
@@ -19981,7 +19988,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                     _0x16cf3e();
                                 try {
                                     var _0x4dd87f = [_0x55627a.startName, [_0x4d7024['hash'], _0x4d7024['hash2'], _0x4d7024['hash3']].join('')];
-                                    'undefined' != typeof EJS_DEBUG_XX && !0x0 === EJS_DEBUG_XX && _0x4dd87f['unshift']('-v'),
+                                    'undefined' != typeof EJS_DEBUG_XX && !0x0 === EJS_DEBUG_XX && _0x4dd87f['unshift']('-v'),console.log(_0x4dd87f),
                                         _0x4d7024['Module']['callMain'](_0x4dd87f),
                                         _0xbae705.call(_0x55627a, _0x55627a['elements']['container'], 'start-game');
                                 } catch (_0x42970c) {
@@ -20450,6 +20457,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             _0xdcec2a['setVariable'](_0x2950d3, _0x55117c[_0x2950d3]);
                                         });
                                 }),
+                                console.log(_0x32dd27),
                                 _0x4d7024['FS']['createDataFile']('/etc', 'retroarch.cfg', _0x14d39f, !0x0, !0x0),
                                 _0x4d7024['FS']['createFolder']('/home/web_user', '.config', !0x0, !0x0),
                                 _0x4d7024['FS']['createFolder']('/home/web_user/.config', 'retroarch', !0x0, !0x0),
@@ -20509,6 +20517,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                          * 读取核心?
                          */
                         _0x29b999 = function (_0x172278) {
+                            //wasm mem
                             var _0x17edbf;
                                 _0x17edbf = _0x172278['byteLength'] ? new Uint8Array(_0x172278) : _0x172278,
                                 'undefined' != typeof GLOBAL_BASE ? _0x4d7024['Module']['HEAPU8']['set'](_0x17edbf, GLOBAL_BASE) : 'undefined' != typeof Runtime && Runtime['GLOBAL_BASE'] ? _0x4d7024['Module']['HEAPU8']['set'](_0x17edbf, Runtime['GLOBAL_BASE']) : _0x4d7024['Module']['HEAPU8']['set'](_0x17edbf, 8);
@@ -20527,8 +20536,9 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             0x0 === _0x59580a && _0x10b71a();
                                         },
                                         window['Module']['onRuntimeInitialized'] = function () {
+
                                             if(!_0xa88a13.Module){
-                                                console.log('onRuntimeInitialized true');
+                                                console.log('onRuntimeInitialized',_0xdcec2a);
                                                 _0xa88a13.Module = _0x4d7024['Module'];
                                                 _0xa88a13.FS = _0x4d7024['FS'];
                                                 _0xa88a13.Controllers = _0xdcec2a;
@@ -20560,6 +20570,8 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                         }
                                     );
                                     var _0x18cb26 = window['Module'];
+                                    window.ejs = _0xa88a13;
+                                    console.log("执行 Module wasm函数");
                                     if (null !== _0x4d7024['wasmData'] && (_0x18cb26['wasmBinary'] = _0x4d7024['wasmData']),
                                         _0x59aa33['isIos'] && null !== _0x4d7024['wasmData']) {
                                         var _0x17edbf = new Blob([_0x247459], {
@@ -20568,11 +20580,12 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             _0x2c1832 = _0x428003('script', {
                                                 'src': _0x18a437['createObjectURL'](_0x17edbf)
                                             });
+                                            console.log(_0x2c1832);
                                         document['body']['appendChild'](_0x2c1832),
                                             _0x2c1832['onload'] = function () {
                                                 void 0x0 === window['addRunDependency'] && 'undefined' != typeof EmulatorJS && (_0x4d7024['Module'] = EmulatorJS(_0x18cb26),
                                                         EmulatorJS = void 0x0),
-                                                    null !== _0x4d7024['memData'] && _0x29b999(_0x4d7024['memData']),
+                                                    null !== _0x4d7024['memData'] && _0x29b999(_0x4d7024['memData'])||console.log('mem文件,直接写入内存'),
                                                     _0x4d7024['Module'] || (_0x4d7024['Module'] = window['Module']),
                                                     _0x4d7024['Module'] && _0x4d7024['Module']['FS'] ? _0x4d7024['FS'] = _0x4d7024['Module']['FS'] : _0x4d7024['FS'] = window['FS'];
                                             };
@@ -20586,9 +20599,10 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             return _0x17edbf.join('');
                                         }(_0x247459),
                                         window['eval'](_0x247459),
+                                        console.log("EmulatorJS(_0x18cb26=>Module 值)"),
                                         void 0x0 === window['addRunDependency'] && 'undefined' != typeof EmulatorJS && (_0x4d7024['Module'] = EmulatorJS(_0x18cb26),
                                             EmulatorJS = void 0x0),
-                                        null !== _0x4d7024['memData'] && _0x29b999(_0x4d7024['memData']),
+                                        null !== _0x4d7024['memData'] && _0x29b999(_0x4d7024['memData'])||console.log('mem文件,直接写入内存'),
                                         _0x4d7024['Module'] || (_0x4d7024['Module'] = window['Module']),
                                         _0x4d7024['Module'] && _0x4d7024['Module']['FS'] ? _0x4d7024['FS'] = _0x4d7024['Module']['FS'] : _0x4d7024['FS'] = window['FS'],
                                         'undefined' != typeof EJS_DEBUG_XX && !0x0 === EJS_DEBUG_XX && (window['EJS_MODULE'] = _0x4d7024['Module'],
@@ -20601,9 +20615,10 @@ const consoleColor = (bg='#000',color='#fff')=>{
                             });
                             var _0x21d6a1 = function (_0x3f49ec) {
                                 /**
-                                 *
+                                 * 解压worker处理函数
                                  */
                                 if (_0x3f49ec['data']) {
+                                    
                                     if (0x1 === _0x3f49ec['data']['t'] && (_0xbae705.call(_0xc6823, _0xc6823['elements']['container'], 'script-loaded'),
                                             _0x3f49ec['target']['terminate']()),
                                         0x2 === _0x3f49ec['data']['t']) {
@@ -20613,18 +20628,22 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             'js' !== _0x58b5a7 || _0x17edbf.includes('.worker.js') || (_0x247459 = _0x3f49ec['data']['data']),
                                             'mem' === _0x58b5a7 && (_0x4d7024['memData'] = _0x3f49ec['data']['data']),
                                             'wasm' === _0x58b5a7 && (_0x4d7024['wasmData'] = _0x3f49ec['data']['data']);
+                                            console.log('解压的文件 : %c' +_0x3f49ec['data']['file'],consoleColor());
                                     }
-                                    0x4 === _0x3f49ec['data']['t'] && _0x3f49ec['data']['total'] > 0x0 && (_0x2c1832.innerHTML = '解压游戏运行核心 ' ['concat'](Math['floor'](_0x3f49ec['data']['current'] / _0x3f49ec['data']['total'] * 0x64), '%'));
+                                    0x4 === _0x3f49ec['data']['t'] && _0x3f49ec['data']['total'] > 0x0 && (_0x2c1832.innerHTML = '解压运行核心 ' ['concat'](Math['floor'](_0x3f49ec['data']['current'] / _0x3f49ec['data']['total'] * 0x64), '%'));
                                 }
                             };
+                            console.log("解压worker处理函数");
+                            //worker 7z.js
                             _0xa24f60(_0x17edbf)['then'](function (_0x48c633) {
+                                console.log('.data文件 解压7z里面的WASM');
                                 _0x48c633['onmessage'] = _0x21d6a1,
                                     _0x48c633['postMessage'](_0x18cb26);
                             });
                         };
                     _0x455c85(_0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['start-game'])), 'click touchstart', function (_0x3787ba) {
                         /**
-                         * 部署 开始游戏事件
+                         * 部署 Module
                          */
                         return _0x132da7(_0x4d7024['loading']['querySelector']('.' ['concat'](_0x4fce24['start-game'])), !0x0),
                             function () {
@@ -20639,7 +20658,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             'arguments': [],
                                             'preRun': [],
                                             'postRun': [],
-                                            'canvas': _0xb2be2a,
+                                            'canvas': ELM_canvans,
                                             'print': function (_0x4a8983) {
                                                 'undefined' != typeof EJS_DEBUG_XX && !0x0 === EJS_DEBUG_XX && console.log(_0x4a8983);
                                             },
@@ -20678,6 +20697,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                                 }
                                             }
                                         };
+                                        console.log(window['Module']);
                                         //JsonUrl = '127.0.0.1' === document['location']['hostname'] && '8002' === document['location']['port'] ? '/v.json?_t='['concat'](_0x1dedcd) : 'https://www.emulatorjs.com/v.json?_t='+_0x1dedcd;
                                         var timemap = Math['ceil'](new Date()['valueOf']() / 0x3e8),
                                             JsonUrl = EJS_BasePath + '/v.json';
@@ -20688,7 +20708,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                             _0x550f17['a']['get']('' ['concat'](_0x47ed14, '/cores/')['concat'](_0x16049b, '?v=')['concat'](_0x55a075), {
                                                 'onDownloadProgress': function (_0x117e6b) {
                                                     var _0x55a075 = _0x117e6b['total'] ? '' ['concat'](Math['floor'](_0x117e6b['loaded'] / _0x117e6b['total'] * 0x64), '%') : '';
-                                                    _0x3787ba.innerHTML = '下载游戏运行核心 ' ['concat'](_0x55a075);
+                                                    _0x3787ba.innerHTML = '下载运行核心 ' ['concat'](_0x55a075);
                                                 },
                                                 'responseType': 'arraybuffer'
                                             })['then'](function (_0x5eb80b) {
@@ -20698,11 +20718,13 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                                     'version': _0x55a075,
                                                     'data': _0x519406
                                                 });
+                                                console.log("下载："+_0x16049b+"并且处理还原为7z文件！");
                                                 var _0xea4c63 = _0x519406.slice ? _0x519406.slice(0xc) : _0x519406['subarray'](0xc);
-                                                _0xea4c63['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0),
+                                                _0xea4c63.set([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0),
                                                     _0x519406 = null,
                                                     _0x4f0fcc(_0xea4c63);
                                             })['catch'](function (_0x2e06c8) {
+                                                console.log(_0x2e06c8);
                                                 _0x3787ba.innerHTML = '<strong style=\"color:#f00;text-shadow: 0px 0px 3px;\">核心下载失败</strong>';
                                             });
                                         };
@@ -20762,6 +20784,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                                     'undefined' != typeof EJS_CUSTOM_COREFILE && (_0x2458d5 = EJS_CUSTOM_COREFILE),
                                                     _0x2458d5 ? _0x24de8d['db'] ? _0x24de8d['get'](_0x2458d5, function (_0x47a6fd) {
                                                         if (_0x47a6fd && _0x47a6fd['version'] === _0x124167) {
+                                                            console.log("读取："+_0x2458d5+"并且处理还原为7z文件！");
                                                             var _0x3787ba = _0x47a6fd['data'].slice ? _0x47a6fd['data'].slice(0xc) : _0x47a6fd['data']['subarray'](0xc);
                                                             _0x3787ba['set']([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x0, 0x3], 0x0),
                                                                 _0x4f0fcc(_0x3787ba);
@@ -21159,6 +21182,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                     }
                 }),
             _0x378b5c = {
+                //按键列表
                 'defaultControllers': {
                     0: {
                         0: {
@@ -22723,7 +22747,6 @@ const consoleColor = (bg='#000',color='#fff')=>{
                             }))), 'touchstart touchend', function (_0x185083) {
                                 'touchend' === _0x185083['type'] ? (_0x3a8e2f(_0x185083['target'], _0x2ec721, !0x1),
                                         window['setTimeout'](function () {
-                                            _0x378b5c['syncInput'](0x0, 0x8, 0x0);
                                         }, 0x1e)) : (_0x3a8e2f(_0x185083['target'], _0x2ec721, !0x0),
                                         _0x378b5c['syncInput'](0x0, 0x8, 0x1)),
                                     _0x185083['stopPropagation']();
@@ -23110,6 +23133,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                         31: null
                     };
                     _0x378b5c['simulateInput'] = function (_0x249751, _0x480d05, _0x50f784) {
+                        console.log(_0x249751, _0x480d05, _0x50f784);
                             if (_0x378b5c['connected']) {
                                 if (_0xa88a13['playing'] && !_0x378b5c['disableInput']) {
                                     var _0x35b9c1 = _0x378b5c['connection']['userid'],
@@ -23756,6 +23780,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                         if (0x0 === _0x16274c.indexOf('fba-dipswitch-')) {
                             var _0x757776 = _0x5995db[0x1].split('|'),
                                 _0x1f895e = _0x16274c['replace'](/_/g, ' ')['replace'](/.+\-(.+)/, '$1');
+                                console.log(_0x757776);
                             _0xa88a13[_0x16274c] = {
                                 'label': _0x1f895e,
                                 'options': _0x757776.slice(0x1, -0x1),
@@ -24015,6 +24040,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                     }
                 },
                 'toggleMenuButton': function (_0x249814, _0x2948e9) {
+                    console.log(_0x249814, _0x2948e9);
                     _0x132da7(this['elements']['settings']['buttons'][_0x249814], !_0x2948e9);
                 },
                 'updateNormalOptions': function (_0x255b79, _0x505484) {
@@ -24250,7 +24276,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                 return;
                         }
                         _0x2c1832['setAttribute']('aria-expanded', _0x14f1b5),
-                            _0x132da7(_0x17edbf, !_0x14f1b5),
+                        _0x132da7(_0x17edbf, !_0x14f1b5),
                             _0x3a8e2f(this['elements']['container'], this.config['classNames']['menu']['open'], _0x14f1b5),
                             _0x14f1b5 && _0x1e2c68['keyboardEvent'](_0x28d6c6) ? _0x7f9f36['focusFirstMenuItem'].call(this, null, !0x0) : _0x14f1b5 || _0x614270 || _0x31cc23.call(this, _0x2c1832, _0x1e2c68['keyboardEvent'](_0x28d6c6));
                     }
@@ -25105,6 +25131,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                 'mouseleave' === _0x10170b['type'] && null === _0x10170b['toElement'] ? _0x2c1832['controls']['hover'] = !0x0 : _0x2c1832['controls']['hover'] = !_0x17edbf['touch'] && 'mouseenter' === _0x10170b['type'];
                             }),
                             this['bind'](_0x2c1832['controls'], 'mousedown mouseup touchstart touchend touchcancel', function (_0x4bfb22) {
+                                console.log(11);
                                 if (['mousedown', 'touchstart'].includes(_0x4bfb22['type'])) {
                                     _0x2c1832['controls']['pressed'] = !0x0;
                                     var _0x17edbf = _0x2c1832['controls']['getAttribute']('data-timer2');
