@@ -2,9 +2,10 @@
 - [www.emulatorjs.com](https://www.emulatorjs.com/) 
 - [RetroArch](https://github.com/libretro/RetroArch.git)
 
+
 ###核心文件源文件 CORE FILE
+
 xxx.data => xxx.7z
-里面含有两份文件 have two file
 - retroarch.js
 - retroarch.js.mem/retroach.wasm
 ```javascript
@@ -24,7 +25,7 @@ xxx.data => xxx.7z
                         link.click();
     },
     downcore = str=>{
-            fetch(str).then(result=>result.arrayBuffer()).then(result=>down(result,str));
+            fetch(str).then(result=>result.arrayBuffer()).then(result=>down(buffreset(result),str));
     };
     //F12 console
     //http://www.emulatorjs.com/cores/
@@ -33,7 +34,7 @@ xxx.data => xxx.7z
     downcore('cores/vba-wasm.data')
 ```
 
-###GBA例子 使用 use
+###GBA例子  gba example
 ```javascript
 let NengeApp = new class{
     CoreFile = "vbanext-wasm.7z";
@@ -106,7 +107,7 @@ let NengeApp = new class{
                         console.log(dest);
                         HEAPU8.set(HEAPU8.subarray(src, src + num), dest)
                 }
-                then HEAPU8.set(gbaBuff, 40201728) change room no refresh page 改变ROOM不刷新，先运行绿宝石就可以开启RTC
+                then HEAPU8.set(gbaU8_Buff, 40201728) change room no refresh page 改变ROOM不刷新，先运行绿宝石就可以开启RTC
                 */
         });
         this.Module = Module;
