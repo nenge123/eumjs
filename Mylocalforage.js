@@ -30,7 +30,7 @@ const getEmuInfo ={
 EJS_LocalPath = getEmuInfo.Path(true),
 EJS_BasePath = getEmuInfo.Path();
 EJS_isMin = !getEmuInfo.isMin() ?'':'.min',
-EJS_cacheJSVersion = 17;
+EJS_cacheJSVersion = 18;
 document.currentScript.onload = event=>{
 console.log(event);
 let style = document.createElement('style');
