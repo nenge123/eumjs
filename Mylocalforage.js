@@ -30,9 +30,8 @@ const getEmuInfo ={
 EJS_LocalPath = getEmuInfo.Path(true),
 EJS_BasePath = getEmuInfo.Path();
 EJS_isMin = !getEmuInfo.isMin() ?'':'.min',
-EJS_cacheJSVersion = 18;
+EJS_cacheJSVersion = 21;
 document.currentScript.onload = event=>{
-console.log(event);
 let style = document.createElement('style');
 style.textContent = '.cachelist{position: absolute;z-index:9;left:0px;top:0px; bottom: 90px;overflow:scroll;width:100%;text-align:center;background:rgba(0,0,0,0.8);touch-action:pan-y;;-webkit-no-user-scalable:no;}'
 +'.cachelist h3{padding: 0px;text-align:center;margin:5px auto;}'
@@ -54,7 +53,7 @@ if("undefined" != typeof EJS_player){
 let gameDiv = document.querySelector(EJS_player);
 gameDiv.style.cssText = '';
 }
-      let EJS_JS = EJS_LocalPath+'/emulator'+(getEmuInfo.isMin() ? '.min' : '')+'.js',
+      let EJS_JS = EJS_LocalPath+'/emulator'+(getEmuInfo.isLocal() ?''  : '.min')+'.js',
         MyDB = localforage.createInstance({
             'name': "NengeNet",
             'storeName': "EmulatorJS"

@@ -19440,9 +19440,9 @@ const consoleColor = (bg='#000',color='#fff')=>{
                     //_0x47ed14 指定下载核心文件域名
                     //'127.0.0.1' === document['location']['hostname'] && '8002' === document['location']['port'] || (_0x47ed14 = '//www.emulatorjs.com'),
                     //_0x47ed14 = EJS_BasePath,
-                    _0x17edbf = EJS_BasePath + '/worker/extract7z' + EJS_isMin + '.js',
-                        _0x2c1832 = EJS_BasePath + '/worker/extractzip' + EJS_isMin + '.js?v=1',
-                        _0x4ce206 = EJS_BasePath + '/worker/libunrar' + EJS_isMin + '.js';
+                    _0x17edbf = EJS_BasePath + '/worker/extract7z.js',
+                        _0x2c1832 = EJS_BasePath + '/worker/extractzip.js?v=1',
+                        _0x4ce206 = EJS_BasePath + '/worker/libunrar.js';
                     /** 绝对地址
                     _0x17edbf = _0x47ed14+'/worker/extract7z.js',
                     _0x2c1832 = _0x47ed14+'/worker/extractzip.js?v=1',
@@ -20922,12 +20922,12 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                     info.name,
                                     (result) => {
                                         if (!result || !result.data || result.version != _0xa88a13.version) {
-                                            fetch(info.url + '?' + timemap).then(val => val.text()).then(val => {
+                                            fetch('worker/'+info.name + '?' + timemap).then(val => val.arrayBuffer()).then(val => {
                                                 _0xa88a13[info.url] = ToURL(val);
                                                 _0x24de8d.put(
                                                     info.name, {
                                                         'version': _0xa88a13.version,
-                                                        'data': val
+                                                        'data': new TextDecoder().decode(val)
                                                     }
                                                 );
                                             });
@@ -20940,15 +20940,15 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                 )
                             };
                         if(EJS_LocalPath!=EJS_BasePath)[{
-                                'name': 'extract7z.js',
+                                'name': 'extract7z.min.js',
                                 'url': _0x17edbf
                             },
                             {
-                                'name': 'extractzip.js',
+                                'name': 'extractzip.min.js',
                                 'url': _0x2c1832
                             },
                             {
-                                'name': 'libunrar.js',
+                                'name': 'libunrar.min.js',
                                 'url': _0x4ce206
                             },
                             /*{'name':'webrtc-adapter','url':BasePath+'/webrtc-adapter.js'},*/
@@ -22817,7 +22817,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                     }else{
                         QueryS(`.${PadCreatB('ejs-virtual-gamepad',0)} .${PadCreatB('left',0)}`).style.display="none";
                     }
-                    QueryS(`.${PadCreatB('ejs-virtual-gamepad',0)} .${PadCreatB('b_menu',0)}`).style.cssText="z-indedx:3; left: 32px;top: 35px;";
+                    QueryS(`.${PadCreatB('ejs-virtual-gamepad',0)} .${PadCreatB('b_menu',0)}`).style.cssText="z-index:3; left: 32px;top: 35px;";
                     for(let btnmapid in GamepadMap){
                         if(isNaN(btnmapid)){
                             let elm = QueryS(`[data-buttonid="${btnmapid}"]`);
@@ -24887,10 +24887,10 @@ const consoleColor = (bg='#000',color='#fff')=>{
                 }, {
                     'key': 'container',
                     'value': function () {
-                        return ;
                         var _0x31e271, _0x17edbf = this['emulator'],
                             _0x2c1832 = _0x17edbf['elements'],
                             _0x45d275 = _0x17edbf;
+                            /*
                         _0x1093f4.call(_0x45d275, _0x2c1832['container'], 'mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen start-game', function (_0x1ac81c) {
                                 var _0x3953b5 = _0x2c1832['controls'];
                                 _0x3953b5 && 'enterfullscreen' === _0x1ac81c['type'] && (_0x3953b5['pressed'] = !0x1,
@@ -24904,6 +24904,7 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                     }, _0x2c3de3),
                                     _0x2c1832['controls']['setAttribute']('data-timer', _0x31e271);
                             }),
+                            */
                             _0x1093f4.call(_0x45d275, window, 'resize', function (_0x3e2cc5) {
                                 var _0x17edbf = _0x45d275['elements']['container']['clientHeight'],
                                     _0x2c1832 = _0x23ffa1.call(_0x45d275, '.' ['concat'](_0x449eac({
