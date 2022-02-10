@@ -30,7 +30,7 @@ const getEmuInfo ={
 EJS_LocalPath = getEmuInfo.Path(true),
 EJS_BasePath = getEmuInfo.Path();
 EJS_isMin = !getEmuInfo.isMin() ?'':'.min',
-EJS_cacheJSVersion = 21;
+EJS_cacheJSVersion = 22;
 document.currentScript.onload = event=>{
 let style = document.createElement('style');
 style.textContent = '.cachelist{position: absolute;z-index:9;left:0px;top:0px; bottom: 90px;overflow:scroll;width:100%;text-align:center;background:rgba(0,0,0,0.8);touch-action:pan-y;;-webkit-no-user-scalable:no;}'

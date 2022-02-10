@@ -20922,7 +20922,11 @@ const consoleColor = (bg='#000',color='#fff')=>{
                                     info.name,
                                     (result) => {
                                         if (!result || !result.data || result.version != _0xa88a13.version) {
-                                            fetch('worker/'+info.name + '?' + timemap).then(val => val.arrayBuffer()).then(val => {
+                                            fetch('worker/'+info.name + '?' + timemap).then(resp=>{
+                                                if(resp.status==404)return ;
+                                                else return resp.arrayBuffer();
+                                            }).then(val => {
+                                                if(!val) return;
                                                 _0xa88a13[info.url] = ToURL(val);
                                                 _0x24de8d.put(
                                                     info.name, {
